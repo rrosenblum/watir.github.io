@@ -1,5 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-08-10T20:31:41+00:00</updated><id>/</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
-</subtitle><entry><title type="html">Major Website Content Updates</title><link href="/website-content/" rel="alternate" type="text/html" title="Major Website Content Updates" /><published>2018-08-03T00:00:00+00:00</published><updated>2018-08-10T02:10:23+00:00</updated><id>/website-content</id><content type="html" xml:base="/website-content/">&lt;p&gt;The Guides and links to Resources have been updated and expanded on the website.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-09-03T00:13:28+00:00</updated><id>/</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
+</subtitle><entry><title type="html">Watir 6.13</title><link href="/watir-6-13/" rel="alternate" type="text/html" title="Watir 6.13" /><published>2018-09-02T00:00:00+00:00</published><updated>2018-09-02T23:26:59+00:00</updated><id>/watir-6-13</id><content type="html" xml:base="/watir-6-13/">&lt;p&gt;Watir 6.13 is now available on RubyGems. Improved Watir wait syntax, and a few minor fixes.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;watir&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 6.13&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;wait-for-element-attribute-values&quot;&gt;Wait for Element Attribute Values&lt;/h3&gt;
+
+&lt;p&gt;To wait for an attribute value, you used to need to write:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;wait_until&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Foo'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now you can do the same thing without a block:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;wait_until&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;text: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can use Regular expressions and/or use more than one attribute value:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;wait_until&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;text: &lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Fo/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;style: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'block'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This can still be mixed and matched with timeout and message values:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;wait_until&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;message: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Oops'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;text: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;timeout: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;additional-items&quot;&gt;Additional Items&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;It used to be that when an element collection was located, the elements would be cached and previously
+located elements would be tried before re-locating them. In the process of making collections lazy
+loaded, we broke this feature. There should be a minor performance improvement for anyone making extensive
+use of collections.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Watir now supports custom element tag names with Adjacent locators.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;id: &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;regular_child&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;tag_name: :grandelement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Watir now supports &lt;code class=&quot;highlighter-rouge&quot;&gt;#set&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;#clear&lt;/code&gt; on elements with user-editable attribute. This should make 
+some WYSIWYG implementations easier to interact with.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Improved support for &lt;a href=&quot;https://github.com/titusfortner/watigiri/&quot;&gt;Watigiri&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.13 is now available on RubyGems. Improved Watir wait syntax, and a few minor fixes.</summary></entry><entry><title type="html">Major Website Content Updates</title><link href="/website-content/" rel="alternate" type="text/html" title="Major Website Content Updates" /><published>2018-08-03T00:00:00+00:00</published><updated>2018-08-10T02:10:23+00:00</updated><id>/website-content</id><content type="html" xml:base="/website-content/">&lt;p&gt;The Guides and links to Resources have been updated and expanded on the website.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -188,7 +246,7 @@ for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fort
   &lt;li&gt;Everything else is cosmetic&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Please let us know if you see anything on our site that doesn’t look right after the updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Website" /><summary type="html">Yes, the website looks a little different! We got some professional help to tidy things up and add a few new features.</summary></entry><entry><title type="html">Element Existentialism</title><link href="/element-existentialism/" rel="alternate" type="text/html" title="Element Existentialism" /><published>2018-07-17T00:00:00+00:00</published><updated>2018-07-23T04:54:21+00:00</updated><id>/element-existentialism</id><content type="html" xml:base="/element-existentialism/">&lt;p&gt;To Be, or Not to Be… an Element
+&lt;p&gt;Please let us know if you see anything on our site that doesn’t look right after the updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Website" /><summary type="html">Yes, the website looks a little different! We got some professional help to tidy things up and add a few new features.</summary></entry><entry><title type="html">Element Existentialism</title><link href="/element-existentialism/" rel="alternate" type="text/html" title="Element Existentialism" /><published>2018-07-17T00:00:00+00:00</published><updated>2018-07-23T05:12:25+00:00</updated><id>/element-existentialism</id><content type="html" xml:base="/element-existentialism/">&lt;p&gt;To Be, or Not to Be… an Element
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;tldr&quot;&gt;TL/DR&lt;/h3&gt;
@@ -431,7 +489,7 @@ locator which behaves like all of the other Watir locators.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
-for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.10.0 is now available on RubyGems! It features a new locator and other element location improvements.</summary></entry><entry><title type="html">Watir 6.9 Released!</title><link href="/watir-6-9/" rel="alternate" type="text/html" title="Watir 6.9 Released!" /><published>2017-11-18T00:00:00+00:00</published><updated>2018-07-23T00:07:37+00:00</updated><id>/watir-6-9</id><content type="html" xml:base="/watir-6-9/">&lt;p&gt;Watir 6.9.0 is now available on RubyGems! Several minor features and bug fixes from several new committers.
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.10.0 is now available on RubyGems! It features a new locator and other element location improvements.</summary></entry><entry><title type="html">Watir 6.9 Released!</title><link href="/watir-6-9/" rel="alternate" type="text/html" title="Watir 6.9 Released!" /><published>2017-11-18T00:00:00+00:00</published><updated>2018-07-23T05:12:25+00:00</updated><id>/watir-6-9</id><content type="html" xml:base="/watir-6-9/">&lt;p&gt;Watir 6.9.0 is now available on RubyGems! Several minor features and bug fixes from several new committers.
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -482,52 +540,4 @@ error message to: “Maybe look in an iframe?”&lt;/li&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
-for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.9.0 is now available on RubyGems! Several minor features and bug fixes from several new committers.</summary></entry><entry><title type="html">Watigiri</title><link href="/watigiri/" rel="alternate" type="text/html" title="Watigiri" /><published>2017-09-07T00:00:00+00:00</published><updated>2018-08-06T03:43:40+00:00</updated><id>/watigiri</id><content type="html" xml:base="/watigiri/">&lt;p&gt;The initial version of the &lt;a href=&quot;https://github.com/titusfortner/watigiri&quot;&gt;Watigiri gem&lt;/a&gt; has 
-just been released. Watigiri is an add-on to Watir that allows actions to be taken using 
-&lt;a href=&quot;https://github.com/sparklemotion/nokogiri&quot;&gt;Nokogiri&lt;/a&gt; (an HTML parser that uses 
-native C or Java libraries) instead of Selenium in the places it makes sense to do so.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;watigiri&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watigiri&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 0.2&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;text-bang&quot;&gt;Text Bang&lt;/h3&gt;
-
-&lt;p&gt;The major feature of &lt;strong&gt;Watigiri&lt;/strong&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;Watir::Element#text!&lt;/code&gt;. A common pattern in testing is to verify that the 
-information that was entered into a form has correctly been sent to a view or list page.
-Rather than making several dozen wire calls to locate and obtain text information from each, 
-you can make a single wire call to obtain the DOM and then quickly locate and obtain all of 
-the information necessary at each element location.&lt;/p&gt;
-
-&lt;p&gt;The most important distinction between &lt;code class=&quot;highlighter-rouge&quot;&gt;Element#text!&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Element#text&lt;/code&gt; is that &lt;code class=&quot;highlighter-rouge&quot;&gt;#text!&lt;/code&gt;
-returns what is in the DOM regardless of whether the text is actually visible (present)
-on the page. So if the element being present on the page matters, do not use &lt;code class=&quot;highlighter-rouge&quot;&gt;#text!&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Also of note, &lt;strong&gt;Watigiri&lt;/strong&gt; automatically flushes the cached DOM whenever a user takes an 
-action that might have changed the DOM (clicks, navigations, etc). 
-So the performance improvement will only come with the number of successive calls
- of &lt;code class=&quot;highlighter-rouge&quot;&gt;#text!&lt;/code&gt; before taking other actions.&lt;/p&gt;
-
-&lt;h3 id=&quot;regular-expression-location&quot;&gt;Regular Expression Location&lt;/h3&gt;
-
-&lt;p&gt;Watir supports using a &lt;code class=&quot;highlighter-rouge&quot;&gt;Regexp&lt;/code&gt; for all locators that accept a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;.
-Watir implements this by locating a subset of elements that might be a match and 
-then making wire calls on each of those to check if they actually match the provided 
-regular expression. With &lt;strong&gt;Watigiri&lt;/strong&gt;, iterating through this list of potentially
-matching elements is done using Nokogiri. Depending on the DOM and the kind
-of regular expression, this can be a small or slighly less small performance improvement.&lt;/p&gt;
-
-&lt;h3 id=&quot;additional-features-and-support&quot;&gt;Additional Features and Support&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Watigiri&lt;/strong&gt; is still effectively in Beta and the implementation and the the method names might
-change (for reasons). There are a number of other potential features that will be tracked
-in the &lt;a href=&quot;https://github.com/titusfortner/watigiri/issues&quot;&gt;Watigiri Issue Tracker&lt;/a&gt;. Please add
-additional feature requests or issues you find with this gem. Support for and discussion
- about this gem can be found in the #watir channel of &lt;a href=&quot;http://seleniumhq.herokuapp.com&quot;&gt;Selenium Slack&lt;/a&gt;.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Addons" /><summary type="html">The initial version of the Watigiri gem has just been released. Watigiri is an add-on to Watir that allows actions to be taken using Nokogiri (an HTML parser that uses native C or Java libraries) instead of Selenium in the places it makes sense to do so.</summary></entry></feed>
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.9.0 is now available on RubyGems! Several minor features and bug fixes from several new committers.</summary></entry></feed>

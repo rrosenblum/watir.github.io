@@ -78,15 +78,16 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/#getting-started">Get Started Now...</a>
     </div>
     <div class = 'demo'>
-      <pre><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">browser</span> <span class="o">=</span> <span class="no">Watir</span><span class="o">::</span><span class="no">Browser</span><span class="p">.</span><span class="nf">new</span> <span class="ss">:chrome</span>
+      <pre><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'watir'</span>
 
-<span class="n">browser</span><span class="p">.</span><span class="nf">goto</span> <span class="s1">'google.com'</span>
-<span class="n">browser</span><span class="p">.</span><span class="nf">text_field</span><span class="p">(</span><span class="ss">title: </span><span class="s1">'Search'</span><span class="p">).</span><span class="nf">set</span> <span class="s1">'Hello World!'</span>
-<span class="n">browser</span><span class="p">.</span><span class="nf">button</span><span class="p">(</span><span class="ss">type: </span><span class="s1">'submit'</span><span class="p">).</span><span class="nf">click</span>
+<span class="n">browser</span> <span class="o">=</span> <span class="no">Watir</span><span class="o">::</span><span class="no">Browser</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">browser</span><span class="p">.</span><span class="nf">goto</span> <span class="s1">'watir.com'</span>
+<span class="n">browser</span><span class="p">.</span><span class="nf">link</span><span class="p">(</span><span class="ss">text: </span><span class="s1">'Guides'</span><span class="p">).</span><span class="nf">click</span>
 
 <span class="nb">puts</span> <span class="n">browser</span><span class="p">.</span><span class="nf">title</span>
-<span class="c1"># =&gt; 'Hello World! - Google Search'</span>
-<span class="n">browser</span><span class="p">.</span><span class="nf">quit</span></code></pre></figure>
+<span class="c1"># =&gt; 'Guides – Watir Project'</span>
+<span class="n">browser</span><span class="p">.</span><span class="nf">close</span></code></pre></figure>
 </pre>
     </div>
   </div>
@@ -96,6 +97,25 @@
     <h2 class = 'flex-out'>
     </h2>
     <div>
+  
+  
+  
+  
+  <div>
+    <h3><a href = '/watir-6-13/'>Watir 6.13</a></h3>
+    Watir 6.13 is now available on RubyGems. Improved Watir wait syntax, and a few minor fixes.
+
+
+    <br />
+    <a href = '/watir-6-13/' class = 'more'>Continue Reading...</a>
+    <br />
+    <span class = 'blog__meta'>
+      
+        Written by: <a href = 'http://watirtight.com/'> Titus Fortner</a>
+      
+      on September  2, 2018</span>
+    <p></p>
+  </div>
   
   
   
