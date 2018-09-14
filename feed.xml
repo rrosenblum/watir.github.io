@@ -1,5 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-09-12T00:58:26+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
-</subtitle><entry><title type="html">Stale Element Behavior Changes</title><link href="/staleness-changes/" rel="alternate" type="text/html" title="Stale Element Behavior Changes" /><published>2018-09-11T00:00:00+00:00</published><updated>2018-09-12T00:50:53+00:00</updated><id>/staleness-changes</id><content type="html" xml:base="/staleness-changes/">&lt;p&gt;Dude, Where’s My Element? An explanation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;stale_visible&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;stale_present&lt;/code&gt; deprecations
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-09-14T17:41:30+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
+</subtitle><entry><title type="html">Watir 6.14</title><link href="/watir-6-14/" rel="alternate" type="text/html" title="Watir 6.14" /><published>2018-09-13T00:00:00+00:00</published><updated>2018-09-14T17:32:59+00:00</updated><id>/watir-6-14</id><content type="html" xml:base="/watir-6-14/">&lt;p&gt;Watir 6.14 is now available on RubyGems. A couple new methods, a couple bug fixes, a major style overhaul, 
+and a new contributor.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;watir&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 6.14&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firstly, thanks Jakub Samek for committing to the Watir Project.&lt;/p&gt;
+
+&lt;h3 id=&quot;important-updates&quot;&gt;Important Updates&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ruby 2.2 and below are no longer supported, please update to 2.3 or greater&lt;/li&gt;
+  &lt;li&gt;Element class and attributes are updated to HTML 5.2 and the latest SVG spec&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;new-methods&quot;&gt;New Methods&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Element#located?&lt;/code&gt; will inform a user if the element has merely been defined (lazy loaded), or has
+ a cached driver element assigned to it&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Element#attribute_list&lt;/code&gt; provides an &lt;code class=&quot;highlighter-rouge&quot;&gt;Array&lt;/code&gt; of attributes for the ELement instance&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Element#attribute_values&lt;/code&gt; provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash&lt;/code&gt; of attributes and their values for the ELement instance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bug-fixes&quot;&gt;Bug Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fix bug preventing collections from waiting for a parent element&lt;/li&gt;
+  &lt;li&gt;Fix bug preventing collection elements from being cached&lt;/li&gt;
+  &lt;li&gt;Fix bug preventing location of elements based on how XPath deals with default namespaces&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.14 is now available on RubyGems. A couple new methods, a couple bug fixes, a major style overhaul, and a new contributor.</summary></entry><entry><title type="html">Stale Element Behavior Changes</title><link href="/staleness-changes/" rel="alternate" type="text/html" title="Stale Element Behavior Changes" /><published>2018-09-11T00:00:00+00:00</published><updated>2018-09-12T00:50:53+00:00</updated><id>/staleness-changes</id><content type="html" xml:base="/staleness-changes/">&lt;p&gt;Dude, Where’s My Element? An explanation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;stale_visible&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;stale_present&lt;/code&gt; deprecations
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;selenium-elements-vs-watir-elements&quot;&gt;Selenium Elements vs Watir Elements&lt;/h3&gt;
@@ -476,22 +517,4 @@ unexpected exceptions as a result of this change, but feedback on how much it sp
 &lt;p&gt;Thanks!&lt;/p&gt;
 
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
-for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.11.0.beta1 is now available on RubyGems. This is another major performance release. Please help us test this new code before the official release.</summary></entry><entry><title type="html">Introducing Nerodia</title><link href="/introducing-nerodia/" rel="alternate" type="text/html" title="Introducing Nerodia" /><published>2018-01-24T00:00:00+00:00</published><updated>2018-08-06T03:43:40+00:00</updated><id>/introducing-nerodia</id><content type="html" xml:base="/introducing-nerodia/">&lt;p&gt;Attention Pythonistas: now you too can use Watir! There is now a Python implementation of Watir called &lt;a href=&quot;https://github.com/watir/nerodia&quot;&gt;Nerodia&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;This project is early in development, but as of its latest release (as of this writing) Nerodia is feature complete with the latest released version of Watir (6.10.2) . There is ongoing work to get Nerodia as up-to-date with Watir as possible while keeping the Python implementation as Pythonic as possible.&lt;/p&gt;
-
-&lt;p&gt;Nerodia is tested against Python 2.7 and 3.4+ and has support for Chrome, Firefox, Internet Explorer, Edge, and Safari. It can be installed via &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; by&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nerodia&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Nerodia is the first implementation of Selenium based Watir outside of Ruby, which is pretty exciting for the Watir project overall. This is an opportunity to see what translates well from Ruby to other languages.&lt;/p&gt;
-
-&lt;h3 id=&quot;designed-for-browser-test-automation&quot;&gt;Designed for Browser Test Automation&lt;/h3&gt;
-&lt;p&gt;Watir is a tool designed for browser test automation first. It is built from the perspective of developers and testers who want reliable browser automation that can scale with a browser automation project. Nerodia is designed from the same perspective, matching Watir’s approaches to browser handling, synchronizing actions, and providing flexible locators for working with DOM elements.&lt;/p&gt;
-
-&lt;h3 id=&quot;powered-by-selenium&quot;&gt;Powered by Selenium&lt;/h3&gt;
-&lt;p&gt;Being a browser test automation tool, Nerodia uses the Selenium WebDriver internally. Nerodia takes advantage of all the capabilities of the Selenium WebDriver while providing a better user experience for writing automated browser tests. As well, Nerodia is compatible with using existing WebDriver instances or options that may be used to construct a Nerodia instance directly.&lt;/p&gt;
-
-&lt;p&gt;If you’re interested in automated browser testing, or have been interested in Watir but using Python, check it out! Information on how to get involved or how to ask a question can be found in the GitHub link above.&lt;/p&gt;</content><author><name>Josh Grant</name></author><category term="Nerodia" /><category term="Addons" /><summary type="html">Attention Pythonistas: now you too can use Watir! There is now a Python implementation of Watir called Nerodia.</summary></entry></feed>
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.11.0.beta1 is now available on RubyGems. This is another major performance release. Please help us test this new code before the official release.</summary></entry></feed>
