@@ -85,8 +85,10 @@
   </p>
   <div class = 'post-content'>
     <p>
-    <p>Dude, Where’s My Element? An explanation of the <code class="highlighter-rouge">stale_visible</code> and <code class="highlighter-rouge">stale_present</code> deprecations
+    <p>Dude, Where’s My Element? An explanation of the <code class="highlighter-rouge">stale_exists</code>, <code class="highlighter-rouge">stale_visible</code> and <code class="highlighter-rouge">stale_present</code> deprecations
 <!--more--></p>
+
+<p>** Update 2018-10-19: this article has been updated to include the <code class="highlighter-rouge">stale_exists</code> deprecation</p>
 
 <h3 id="selenium-elements-vs-watir-elements">Selenium Elements vs Watir Elements</h3>
 
@@ -144,10 +146,10 @@ Instead of <code class="highlighter-rouge">wait_while(&amp;:present?)</code> use
 
 <h3 id="deprecation-warnings">Deprecation Warnings</h3>
 
-<p>Watir is now logging deprecation notices for <code class="highlighter-rouge">stale_present</code> and <code class="highlighter-rouge">stale_visible</code> in preparation
+<p>Watir is now logging deprecation notices for <code class="highlighter-rouge">stale_exists</code>, <code class="highlighter-rouge">stale_present</code> and <code class="highlighter-rouge">stale_visible</code> in preparation
 for a Watir 7 release.</p>
 
-<p>If you are using <code class="highlighter-rouge">#present?</code>, <code class="highlighter-rouge">#visible?</code> or some form of <code class="highlighter-rouge">wait_while</code> with either of these methods, and
+<p>If you are using <code class="highlighter-rouge">#exists?</code>, <code class="highlighter-rouge">#present?</code>, <code class="highlighter-rouge">#visible?</code> or some form of <code class="highlighter-rouge">wait_while</code> with these methods, and
 you are receiving this notice, be aware that your tests might break in Watir 7. Keep in mind
 how Watir considers elements, and make use of <code class="highlighter-rouge">#stale?</code> if your usage does not match Watir’s usage.</p>
 
@@ -159,7 +161,7 @@ how Watir considers elements, and make use of <code class="highlighter-rouge">#s
 
 <p>To turn off these specific notices:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Watir</span><span class="p">.</span><span class="nf">logger</span><span class="p">.</span><span class="nf">ignore</span><span class="p">(</span><span class="sx">%i[stale_present stale_visible]</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Watir</span><span class="p">.</span><span class="nf">logger</span><span class="p">.</span><span class="nf">ignore</span><span class="p">(</span><span class="sx">%i[stale exists stale_present stale_visible]</span><span class="p">)</span></code></pre></figure>
 
 
     </p>
