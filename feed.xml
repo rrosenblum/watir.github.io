@@ -1,5 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-10-19T15:28:57+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
-</subtitle><entry><title type="html">Watir 6.14</title><link href="/watir-6-14/" rel="alternate" type="text/html" title="Watir 6.14" /><published>2018-09-13T00:00:00+00:00</published><updated>2018-09-15T19:20:50+00:00</updated><id>/watir-6-14</id><content type="html" xml:base="/watir-6-14/">&lt;p&gt;Watir 6.14 is now available on RubyGems. A couple new methods, a couple bug fixes, a major style overhaul, 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-07T22:59:10+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
+</subtitle><entry><title type="html">Watir 6.15</title><link href="/watir-6-15/" rel="alternate" type="text/html" title="Watir 6.15" /><published>2018-11-07T00:00:00+00:00</published><updated>2018-11-07T22:41:31+00:00</updated><id>/watir-6-15</id><content type="html" xml:base="/watir-6-15/">&lt;p&gt;Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, 
+and some minor performance improvements.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;watir&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 6.15&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Thanks to Ryan Baumann for his contribution to our project&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Thanks also to Thomas Walpole from Capybara for helping us improve our Regular Expression matching&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;new-element-methods&quot;&gt;New Element Methods&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Elements#selected_text&lt;/code&gt;: This is the reflexive method to &lt;code class=&quot;highlighter-rouge&quot;&gt;Element#select_text&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Element#classes&lt;/code&gt;: Since &lt;code class=&quot;highlighter-rouge&quot;&gt;Element#class_name&lt;/code&gt; returns a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; of all of the classes 
+for the given element with white space, it makes more sense to be able to return an &lt;code class=&quot;highlighter-rouge&quot;&gt;Array&lt;/code&gt; of class values if there are
+multiple classes expected.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Element#obscured?&lt;/code&gt;: The intent here is to evaluate whether &lt;code class=&quot;highlighter-rouge&quot;&gt;Element#click&lt;/code&gt; will result in a 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ElementClickInterceptedError&lt;/code&gt; before having to make the click in the first place.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;locator-updates&quot;&gt;Locator Updates&lt;/h3&gt;
+
+&lt;p&gt;A major feature of Watir over using Selenium directly is the extended number of locators available. Watir
+allows you to combine multiple locators to more accurately describe a unique element without needing to resort to
+writing difficult to read (and likely brittle) XPath or CSS strings. 
+Watir takes a &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash&lt;/code&gt; of locators and runs it through a &lt;code class=&quot;highlighter-rouge&quot;&gt;SelectorBuilder&lt;/code&gt; implementation. 
+By default this is implementated with XPath.
+This class will convert the provided &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash&lt;/code&gt; into an ugly but accurate XPath locator that the end user thankfully never 
+needs to look at but is exactly what the driver needs to locate the element. Any locators that can not be 
+entirely converted into a single XPath expression (things pertaining to visibility, or values with complicated 
+Regular Expressions), the &lt;code class=&quot;highlighter-rouge&quot;&gt;Locator&lt;/code&gt; class will use whatever could be built into a partially matching XPath expression, 
+locate all elements that match it, 
+and then iterate through each of those elements attempting to match the remaining locators.&lt;/p&gt;
+
+&lt;p&gt;The new code in this version will locate more elements on the first try without requiring iteration, 
+and does a better job filtering out the number of elements that need to be iterated over when using complex &lt;code class=&quot;highlighter-rouge&quot;&gt;Regexp&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tips on using &lt;code class=&quot;highlighter-rouge&quot;&gt;Regexp&lt;/code&gt; values in locators:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use only word characters: For instance &lt;code class=&quot;highlighter-rouge&quot;&gt;/random-/&lt;/code&gt; should be preferred when possible over more complex ways of 
+matching, like: &lt;code class=&quot;highlighter-rouge&quot;&gt;/random-\d\d\d/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;“Starts with” can also be entirely captured in one call, so you can do &lt;code class=&quot;highlighter-rouge&quot;&gt;/^random-/&lt;/code&gt; if that addition makes it unique&lt;/li&gt;
+  &lt;li&gt;If you need to use more anything more complicated, make it as specific as possible to minimize the number of 
+elements that need to be iterated over to find the exact element you are looking for.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, and some minor performance improvements.</summary></entry><entry><title type="html">Watir 6.14</title><link href="/watir-6-14/" rel="alternate" type="text/html" title="Watir 6.14" /><published>2018-09-13T00:00:00+00:00</published><updated>2018-09-15T19:20:50+00:00</updated><id>/watir-6-14</id><content type="html" xml:base="/watir-6-14/">&lt;p&gt;Watir 6.14 is now available on RubyGems. A couple new methods, a couple bug fixes, a major style overhaul, 
 and a new contributor.
 &lt;!--more--&gt;&lt;/p&gt;
 
@@ -486,37 +542,4 @@ definitely let us know if you see some solid real-world performance improvements
 &lt;p&gt;Regardless, this update has done a lot to simplify our code as we move toward Watir 7.0.&lt;/p&gt;
 
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
-for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.11.0 is now available on RubyGems. This is the production version of the performance release you’ve been promised.</summary></entry><entry><title type="html">Watir 6.11 Beta</title><link href="/watir-6-11-beta1/" rel="alternate" type="text/html" title="Watir 6.11 Beta" /><published>2018-05-04T00:00:00+00:00</published><updated>2018-08-06T03:43:40+00:00</updated><id>/watir-6-11-beta1</id><content type="html" xml:base="/watir-6-11-beta1/">&lt;p&gt;Watir 6.11.0.beta1 is now available on RubyGems. This is another major performance
-release. Please help us test this new code before the official release.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;watir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;= 6.11.0.beta1&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;performance&quot;&gt;Performance!&lt;/h3&gt;
-
-&lt;p&gt;Similar to the Watir 6.4 release last Summer, this release is solely focused on improving
-peformance. Thanks to the work done mostly by Justin Ko, our approach to locating
-elements has been significantly simplified and optimized.&lt;/p&gt;
-
-&lt;p&gt;The changes in this Beta - (&lt;a href=&quot;https://github.com/watir/watir/pull/719/files&quot;&gt;#719&lt;/a&gt; &amp;amp; 
-&lt;a href=&quot;https://github.com/watir/watir/pull/720/files&quot;&gt;#720&lt;/a&gt;) appear to decrease the number of
-wire calls in the element tests of our suite by about 40%, which appears to drop 
-local execution time (on Travis) by over 15%. This means that when running on a Remote server
-like Sauce Labs, depending on what kinds of element calls dominate your tests, you
-could see some impressive performance improvements.&lt;/p&gt;
-
-&lt;p&gt;Please try out the new gem on your test suites. We’re interested in finding out about new
-unexpected exceptions as a result of this change, but feedback on how much it speeds up your tests.&lt;/p&gt;
-
-&lt;p&gt;Thanks!&lt;/p&gt;
-
-&lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
-for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.11.0.beta1 is now available on RubyGems. This is another major performance release. Please help us test this new code before the official release.</summary></entry></feed>
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.11.0 is now available on RubyGems. This is the production version of the performance release you’ve been promised.</summary></entry></feed>
