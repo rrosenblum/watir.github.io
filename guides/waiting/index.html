@@ -160,51 +160,12 @@ any of the wait methods, or you can change the global default with:</p>
 
 <h3 id="wait-until-present-and-wait-while-present">Wait Until Present and Wait While Present</h3>
 
-<p>There are two special waiting methods that apply only to Elements. As of Watir 6.2 for <code class="highlighter-rouge">#wait_while_present</code>
-and Watir 6.12 for <code class="highlighter-rouge">#wait_until_present</code>, these methods have subtly changed from their previous implementation.</p>
-
-<p>Most of the time you do not want to use these methods. In most circumstances you should use:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">browser</span><span class="p">.</span><span class="nf">div</span><span class="p">(</span><span class="ss">id: </span><span class="s1">'foo'</span><span class="p">).</span><span class="nf">wait_until</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:present?</span><span class="p">)</span>
-<span class="n">browser</span><span class="p">.</span><span class="nf">div</span><span class="p">(</span><span class="ss">id: </span><span class="s1">'bar'</span><span class="p">).</span><span class="nf">wait_while</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:present?</span><span class="p">)</span></code></pre></figure>
-
-<p>But what if you have this element:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"here"</span><span class="nt">&gt;</span>Foo<span class="nt">&lt;/div&gt;</span></code></pre></figure>
-
-<p>and you locate it with this code:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">element</span> <span class="o">=</span> <span class="n">browser</span><span class="p">.</span><span class="nf">div</span><span class="p">(</span><span class="ss">class: </span><span class="s2">"here"</span><span class="p">)</span></code></pre></figure>
-
-<p>and then some dynamic event caused the element class to change:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"not-here"</span><span class="nt">&gt;</span>Foo<span class="nt">&lt;/div&gt;</span></code></pre></figure>
-
-<p>The element is still there, it just no longer corresponds to the selector Watir used to locate it.
-Because of how Watir caches elements for performance reasons, the following code will time out
-(Watir will just keep verifying that the cached element is still there):</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">element</span><span class="p">.</span><span class="nf">wait_while</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:present?</span><span class="p">)</span></code></pre></figure>
-
-<p>In this case we want the element to be looked up from scratch during the polling, 
-which is what this does:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">element</span><span class="p">.</span><span class="nf">wait_while_present</span></code></pre></figure>
-
-<p>Similarly for <code class="highlighter-rouge">#wait_until_present</code>, the scenario is when an element is located, then goes away,
-and you want to wait for it to come back.</p>
-
-<p>This will throw a Stale Element exception:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">element</span><span class="p">.</span><span class="nf">wait_until</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:present?</span><span class="p">)</span></code></pre></figure>
-
-<p>This will return when the element has come back:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">element</span><span class="p">.</span><span class="nf">wait_until_present</span></code></pre></figure>
-
+<p>As of 6.15 <code class="highlighter-rouge">#wait_while_present</code> and <code class="highlighter-rouge">#wait_until_present</code> are deprecated. For versions 6.2 through 6.14
+these methods had subtly different behavior from <code class="highlighter-rouge">.wait_until(&amp;:present?)</code> &amp; <code class="highlighter-rouge">.wait_while(&amp;:present?)</code>.
+This is no longer the case and these methods should no longer be used.</p>
 
 <p></p>
-<h5>Last Updated: August 03, 2018</h5>
+<h5>Last Updated: November 07, 2018</h5>
   </article>
   
     <aside>
