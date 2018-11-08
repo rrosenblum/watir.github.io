@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-07T23:20:51+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
-</subtitle><entry><title type="html">Watir 6.15</title><link href="/watir-6-15/" rel="alternate" type="text/html" title="Watir 6.15" /><published>2018-11-07T00:00:00+00:00</published><updated>2018-11-07T22:41:31+00:00</updated><id>/watir-6-15</id><content type="html" xml:base="/watir-6-15/">&lt;p&gt;Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, 
-and some minor performance improvements.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-08T14:31:28+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
+</subtitle><entry><title type="html">Watir 6.15</title><link href="/watir-6-15/" rel="alternate" type="text/html" title="Watir 6.15" /><published>2018-11-07T00:00:00+00:00</published><updated>2018-11-08T14:30:05+00:00</updated><id>/watir-6-15</id><content type="html" xml:base="/watir-6-15/">&lt;p&gt;Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, 
+and some minor performance improvements. The equivalent functionality in Python 
+has also been released in Nerodia 0.12.
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -10,6 +11,12 @@ and some minor performance improvements.
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 6.15&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;to install Nerodia (Python)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;U&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nerodia&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For more information visit: https://github.com/watir/nerodia/blob/master/README.rst&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Thanks to Ryan Baumann for his contribution to our project&lt;/strong&gt;&lt;/li&gt;
@@ -44,7 +51,7 @@ and then iterate through each of those elements attempting to match the remainin
 &lt;p&gt;The new code in this version will locate more elements on the first try without requiring iteration, 
 and does a better job filtering out the number of elements that need to be iterated over when using complex &lt;code class=&quot;highlighter-rouge&quot;&gt;Regexp&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Tips on using &lt;code class=&quot;highlighter-rouge&quot;&gt;Regexp&lt;/code&gt; values in locators:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tips on using &lt;code class=&quot;highlighter-rouge&quot;&gt;Regexp&lt;/code&gt; values in locators:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Use only word characters: For instance &lt;code class=&quot;highlighter-rouge&quot;&gt;/random-/&lt;/code&gt; should be preferred when possible over more complex ways of 
@@ -55,7 +62,7 @@ elements that need to be iterated over to find the exact element you are looking
 &lt;/ul&gt;
 
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
-for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, and some minor performance improvements.</summary></entry><entry><title type="html">Watir 6.14</title><link href="/watir-6-14/" rel="alternate" type="text/html" title="Watir 6.14" /><published>2018-09-13T00:00:00+00:00</published><updated>2018-09-15T19:20:50+00:00</updated><id>/watir-6-14</id><content type="html" xml:base="/watir-6-14/">&lt;p&gt;Watir 6.14 is now available on RubyGems. A couple new methods, a couple bug fixes, a major style overhaul, 
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, and some minor performance improvements. The equivalent functionality in Python has also been released in Nerodia 0.12.</summary></entry><entry><title type="html">Watir 6.14</title><link href="/watir-6-14/" rel="alternate" type="text/html" title="Watir 6.14" /><published>2018-09-13T00:00:00+00:00</published><updated>2018-09-15T19:20:50+00:00</updated><id>/watir-6-14</id><content type="html" xml:base="/watir-6-14/">&lt;p&gt;Watir 6.14 is now available on RubyGems. A couple new methods, a couple bug fixes, a major style overhaul, 
 and a new contributor.
 &lt;!--more--&gt;&lt;/p&gt;
 

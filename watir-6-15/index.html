@@ -86,7 +86,8 @@
   <div class = 'post-content'>
     <p>
     <p>Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, 
-and some minor performance improvements.
+and some minor performance improvements. The equivalent functionality in Python 
+has also been released in Nerodia 0.12.
 <!--more--></p>
 
 <p><strong><em>To install:</em></strong></p>
@@ -96,6 +97,12 @@ and some minor performance improvements.
 <p><strong><em>or in your Gemfile:</em></strong></p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s2">"watir"</span><span class="p">,</span> <span class="s2">"~&gt; 6.15"</span></code></pre></figure>
+
+<p><strong><em>to install Nerodia (Python)</em></strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="no">U</span> <span class="n">nerodia</span></code></pre></figure>
+
+<p>For more information visit: https://github.com/watir/nerodia/blob/master/README.rst</p>
 
 <ul>
   <li><strong>Thanks to Ryan Baumann for his contribution to our project</strong></li>
@@ -130,7 +137,7 @@ and then iterate through each of those elements attempting to match the remainin
 <p>The new code in this version will locate more elements on the first try without requiring iteration, 
 and does a better job filtering out the number of elements that need to be iterated over when using complex <code class="highlighter-rouge">Regexp</code>.</p>
 
-<p>Tips on using <code class="highlighter-rouge">Regexp</code> values in locators:</p>
+<p><strong>Tips on using <code class="highlighter-rouge">Regexp</code> values in locators:</strong></p>
 
 <ul>
   <li>Use only word characters: For instance <code class="highlighter-rouge">/random-/</code> should be preferred when possible over more complex ways of 
@@ -150,6 +157,8 @@ for the complete history of updates.</p>
     <div class = 'mb-2 mt-2'><a href = '/tag/releases/' class = 'more more--round'>Releases</a></div>
   </div>
   <div>
+    
+    <a href = 'https://twitter.com/watir_team/status/1060539826829697024'>Thoughts about this article? Let us know!</a>
     
   </div>
 </article>
