@@ -1,5 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-12T16:38:38+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
-</subtitle><entry><title type="html">Watir 6.15</title><link href="/watir-6-15/" rel="alternate" type="text/html" title="Watir 6.15" /><published>2018-11-07T00:00:00+00:00</published><updated>2018-11-08T14:30:05+00:00</updated><id>/watir-6-15</id><content type="html" xml:base="/watir-6-15/">&lt;p&gt;Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-16T19:04:13+00:00</updated><id>/feed.xml</id><title type="html">Watir Project</title><subtitle>Watir stands for Web Application Testing In Ruby. It facilitates the writing of automated tests by mimicking the behavior of a user interacting with a website.
+</subtitle><entry><title type="html">Watir 6.16</title><link href="/watir-6-16/" rel="alternate" type="text/html" title="Watir 6.16" /><published>2018-12-16T00:00:00+00:00</published><updated>2018-12-16T18:43:02+00:00</updated><id>/watir-6-16</id><content type="html" xml:base="/watir-6-16/">&lt;p&gt;Watir 6.16 is now available on RubyGems. Extensive scrolling functionality has been added from Alex’s
+ watir-scroll gem and Element Location has been overhauled again for some performance improvements.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;watir&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 6.16&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;scrolling&quot;&gt;Scrolling&lt;/h3&gt;
+
+&lt;p&gt;The Watir team has frequently recommended Alex’s &lt;a href=&quot;https://github.com/p0deje/watir-scroll&quot;&gt;watir-scroll.gem&lt;/a&gt; 
+to our users. After some discussion it was decided to maintain that functionality directly in Watir. 
+If you are already using the latest version of watir-scroll, you can remove it from your gemfile and 
+everything will just work, as the API has stayed exactly the same.&lt;/p&gt;
+
+&lt;p&gt;If you aren’t already using it, you should check to see if this functionality might be useful for you, it is 
+invaluable when working with static css styles, “infinite scroll” pages, and elements inside of scroll bars.&lt;/p&gt;
+
+&lt;h3 id=&quot;element-location&quot;&gt;Element Location&lt;/h3&gt;
+
+&lt;p&gt;A lot of work has gone into completely redoing the locator class implementations the past couple months.
+In addition to the code being much cleaner, in many cases Watir can now locate nested elements with
+a single wire call instead of requiring multiple calls. If you use a lot of nested elements or
+Page Sections as part of your page object implementation, you might see a minor performance improvement.&lt;/p&gt;
+
+&lt;p&gt;An interesting comparison of wire calls for the following code:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Clicking an Element nested 4 deep&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;fieldset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;name: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'user_new'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fieldset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;index: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;fieldset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;checkbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;id: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'new_user_interests_books'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;click&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;watir-63-original-approach-with-lots-of-wire-calls&quot;&gt;Watir 6.3 (Original approach with lots of wire calls)&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;33 Wire Calls: Window, Windows, Frame, Locate, Name, Enabled, Locate, Name, Enabled, Locate All, 
+  Name, Enabled, Locate, Name, Type, Enabled, Enabled, Enabled, Window, Windows, Frame, Enabled, 
+  Displayed, Enabled, Displayed, Enabled, Displayed, Enabled, Displayed, Enabled, Enabled, Click&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;watir-64-big-performance-update-summer-of-2017&quot;&gt;Watir 6.4 (Big performance update Summer of 2017)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;6 Wire Calls: Locate, Locate, Locate All, Locate, Enabled, Click&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;watir-610-reorganized-things-which-made-this-use-case-worse&quot;&gt;Watir 6.10 (Reorganized things which made this use case worse)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;13 Wire Calls: Locate, Locate, Name, Locate All, Name, Name, Name, Name, Name, Locate, 
+  Enabled, Enabled, Click&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;watir-611-big-performance-update-spring-of-2018&quot;&gt;Watir 6.11 (Big performance update Spring of 2018)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;6 Wire Calls: Locate, Locate, Locate All, Locate, Enabled, Click&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;watir-613-optimized-element-location-in-collections&quot;&gt;Watir 6.13 (Optimized element location in collections)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;5 Wire Calls: Locate, Locate, Locate, Enabled, Click&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;watir-616-combined-nested-elements-into-one-location-wire-call&quot;&gt;Watir 6.16 (Combined nested elements into one location wire call)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;3 Wire Calls: Locate, Enabled, Click&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;locator-extension-classes-updated&quot;&gt;Locator Extension Classes Updated&lt;/h3&gt;
+
+&lt;p&gt;This only applies to add-on gems like &lt;code class=&quot;highlighter-rouge&quot;&gt;watizzle.gem&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;watir_css.gem&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;watigiri.gem&lt;/code&gt;, but
+the classes and methods that such gems implement will either need to be changed 
+or have the Watir version restricted.&lt;/p&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
+for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.16 is now available on RubyGems. Extensive scrolling functionality has been added from Alex’s watir-scroll gem and Element Location has been overhauled again for some performance improvements.</summary></entry><entry><title type="html">Watir 6.15</title><link href="/watir-6-15/" rel="alternate" type="text/html" title="Watir 6.15" /><published>2018-11-07T00:00:00+00:00</published><updated>2018-11-08T14:30:05+00:00</updated><id>/watir-6-15</id><content type="html" xml:base="/watir-6-15/">&lt;p&gt;Watir 6.15 is now available on RubyGems. A few new element methods, new contributors, 
 and some minor performance improvements. The equivalent functionality in Python 
 has also been released in Nerodia 0.12.
 &lt;!--more--&gt;&lt;/p&gt;
@@ -521,32 +597,4 @@ The JavaScript atom used by most of the drivers is called &lt;code class=&quot;h
   &lt;li&gt;present - Watir determines if the element both “exists” and is “visible”&lt;/li&gt;
   &lt;li&gt;hidden - A filtering option used by Watir &amp;amp; Capybara for elements that are “displayed”&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://w3c.github.io/webdriver/#dfn-interactable&quot;&gt;interactable&lt;/a&gt; - Attempting to determine if an action can be taken&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Titus Fortner</name></author><category term="Blogs" /><summary type="html">To Be, or Not to Be… an Element</summary></entry><entry><title type="html">Watir 6.11</title><link href="/watir-6-11/" rel="alternate" type="text/html" title="Watir 6.11" /><published>2018-05-18T00:00:00+00:00</published><updated>2018-08-06T03:43:40+00:00</updated><id>/watir-6-11</id><content type="html" xml:base="/watir-6-11/">&lt;p&gt;Watir 6.11.0 is now available on RubyGems. This is the production version of the
- performance release you’ve been promised.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;To install:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;watir&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;or in your Gemfile:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 6.11&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;performance&quot;&gt;Performance!&lt;/h3&gt;
-
-&lt;p&gt;See our &lt;a href=&quot;/watir-6-11-beta1/&quot;&gt;previous post&lt;/a&gt; about the intention of this release. While 6.11
-decreases the number of wire calls made in our watirspecs by over 40%, we haven’t had any
-reports of significant real-world performance improvements. This will have the biggest
-impact on those who are running remotely with high latency network connections, 
-and for those who use complicated locator strategies. 
-Everyone else should see some minor speed improvements.
-Let us know if you find any bugs that we didn’t catch with our beta releases, and 
-definitely let us know if you see some solid real-world performance improvements with this.&lt;/p&gt;
-
-&lt;p&gt;Regardless, this update has done a lot to simplify our code as we move toward Watir 7.0.&lt;/p&gt;
-
-&lt;p&gt;See the &lt;a href=&quot;https://github.com/watir/watir/blob/master/CHANGES.md&quot;&gt;Changelog&lt;/a&gt; 
-for the complete history of updates.&lt;/p&gt;</content><author><name>Titus Fortner</name></author><category term="Releases" /><summary type="html">Watir 6.11.0 is now available on RubyGems. This is the production version of the performance release you’ve been promised.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Titus Fortner</name></author><category term="Blogs" /><summary type="html">To Be, or Not to Be… an Element</summary></entry></feed>
